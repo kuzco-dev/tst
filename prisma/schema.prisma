@@ -19,6 +19,8 @@ model User {
   sessions      Session[]
   accounts      Account[]
   banner        Banner?   // ← plus de @relation ici !
+    
+    userItems     UserItems[]
 
   @@unique([email])
   @@map("user")
@@ -75,8 +77,35 @@ model Banner {
   description String
   userId      String   @unique
   user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  url       String
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
   @@map("banner")
+}
+
+model Store {
+  id        String   @id @default(uuid())
+  name      String
+  price     Int
+  url       String
+  type      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+   userItems     UserItems[]
+
+  @@map("store")
+}
+
+model UserItems {
+  id        String   @id @default(uuid())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    String
+  store     Store    @relation(fields: [storeId], references: [id], onDelete: Cascade)
+  storeId   String
+  acquiredAt DateTime @default(now())
+
+  @@unique([userId, storeId])
+  @@map("user_items")
 }
