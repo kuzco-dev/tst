@@ -9,19 +9,34 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@prisma/client": "^6.5.0",
+    "@supabase/supabase-js": "^2.49.4",
+    "better-auth": "^1.2.5",
+    "cloudinary": "^2.6.0",
+    "cors": "^2.8.5",
+    "discord-oauth2": "^2.12.1",
+    "next": "15.2.4",
+    "next-cloudinary": "^6.16.0",
+    "node-steam-openid": "^2.0.0",
+    "oauth2-server": "^3.1.1",
+    "openid-client": "^6.4.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.2.4"
+    "resend": "^4.2.0",
+    "simple-oauth2": "^5.1.0"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/cors": "^2.8.17",
     "@types/node": "^20",
+    "@types/node-steam-openid": "^1.0.3",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "15.2.4",
-    "@eslint/eslintrc": "^3"
+    "prisma": "^6.5.0",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }
